@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,16 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [AuthController::class, 'loginForm' ])->name('login');
 Route::get('/register', [AuthController::class, 'registerForm' ]);
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/dashboard', [AuthController::class, 'index'])->middleware('verified', 'guest')->name('dashboard');
+
+
+
+
 
 Route::get('verification/{user}/{token}', [AuthController::class, 'verification']);
+
+
+
+
