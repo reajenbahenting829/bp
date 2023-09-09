@@ -20,7 +20,7 @@ Route::get('/register', [AuthController::class, 'registerForm' ]);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::get('/dashboard', [AuthController::class, 'index'])->middleware('verified', 'guest')->name('dashboard');
+Route::get('/dashboard', [AuthController::class, 'index'])->middleware('auth.dashboard', 'guest')->name('dashboard');
 
 
 

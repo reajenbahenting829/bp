@@ -68,7 +68,8 @@ class Kernel extends HttpKernel
 
     protected $routeMiddleware = [
         // ...
-        'verified' => \App\Http\Middleware\VerifyEmail::class,
+
+        'auth.dashboard' => \App\Http\Middleware\AuthenticateDashboard::class,
     ];
 
 }
