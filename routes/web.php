@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::get('/dashboard', [AuthController::class, 'index'])->middleware('auth.das
 
 
 
-
+Route::get('/sendmail', [EmailController::class, 'sendEmail']);
 
 Route::get('verification/{user}/{token}', [AuthController::class, 'verification']);
 
