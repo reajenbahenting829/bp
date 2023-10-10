@@ -1,6 +1,6 @@
 <p> Welcome {{ $user->name }}</p>
 
-<p>You recieve this message because iloveyou</p>
+<p>You recieve this message</p>
 <p>please click the button</p>
 
 <p>
